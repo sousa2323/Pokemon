@@ -6,7 +6,7 @@ NOMES = [
     "Arthur", "Lucas", "João",
     "Maria", "José", "Pedro",
     "Paulo", "Ana", "Luiza",
-    "Beatriz", "Carlos", "Cristina"
+    "Beatriz", "Carlos", "Cristina",
 ]
 
 POKEMONS = [
@@ -36,7 +36,7 @@ class Pessoa:
 
     def __str__(self):
         return self.nome
-    
+  
 
     def mostrar_pokemons(self):
         if self.pokemons:
@@ -63,8 +63,3 @@ class Inimigo(Pessoa):
                 pokemons.append(random.choices(POKEMONS))
 
         super().__init__(nome=nome, pokemons=pokemons)
-
-meu_inimigo = Inimigo(nome="Gary")
-
-print(meu_inimigo)
-meu_inimigo.mostrar_pokemons()

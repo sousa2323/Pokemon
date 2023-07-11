@@ -38,5 +38,3 @@ class PokemonAgua(Pokemon):
 
     def atacar(self, pokemon):
         print("{} lançou um jato d'água em {}".format(self, pokemon))
-
-
