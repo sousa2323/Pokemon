@@ -1,5 +1,13 @@
+import random
+
 from pokemon import *
 
+NOMES = [
+    "Arthur", "Lucas", "João",
+    "Maria", "José", "Pedro",
+    "Paulo", "Ana", "Luiza",
+    "Beatriz", "Carlos", "Cristina"
+]
 
 class Pessoa:
 
@@ -7,7 +15,7 @@ class Pessoa:
         if nome:
             self.nome = nome
         else:
-            self.nome = "Anômimo"
+            self.nome = random.choice(NOMES)
 
         self.pokemons = pokemons
 
@@ -33,13 +41,8 @@ class Player(Pessoa):
 class Inimigo(Pessoa):
     tipo = "inimigo"
 
-eu = Player("Arthur")
+    def __init__(self):
+        pass
 
-pokemon_selvagem = PokemonEletrico("Pikachu")
-
-print("Antes de capturar")
-eu.mostrar_pokemons()
-
-eu.capturar(pokemon_selvagem)
-
-eu.mostrar_pokemons()
+eu = Player()
+print(eu)
