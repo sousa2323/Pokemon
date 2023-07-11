@@ -44,7 +44,8 @@ class Pessoa:
             for pokemon in self.pokemons:
                 print(pokemon)
         else:
-            print("{} não tem nenhum pokemon".format(self))    
+            print("{} não tem nenhum pokemon".format(self))
+
 class Player(Pessoa):
     tipo = "player"
 
@@ -63,6 +64,7 @@ class Inimigo(Pessoa):
 
         super().__init__(nome=nome, pokemons=pokemons)
 
-meu_inimigo = Inimigo()
+meu_inimigo = Inimigo(nome="Gary")
+
 print(meu_inimigo)
 meu_inimigo.mostrar_pokemons()
