@@ -9,6 +9,21 @@ NOMES = [
     "Beatriz", "Carlos", "Cristina"
 ]
 
+POKEMONS = [
+    PokemonEletrico("Pikachu"),
+    PokemonFogo("Charmander"),
+    PokemonAgua("Squirtle"),
+    PokemonAgua("Bulbassauro"),
+    PokemonEletrico("Raichu"),
+    PokemonFogo("Charmeleon"),
+    PokemonAgua("Wartortle"),
+    PokemonAgua("Ivysaur"),
+    PokemonEletrico("Pichu"),
+    PokemonFogo("Charizard"),
+    PokemonAgua("Blastoise"),
+    PokemonAgua("Venusaur"),
+]
+
 class Pessoa:
 
     def __init__(self, nome=None, pokemons=[]):
@@ -41,8 +56,13 @@ class Player(Pessoa):
 class Inimigo(Pessoa):
     tipo = "inimigo"
 
-    def __init__(self):
-        pass
+    def __init__(self, nome=None, pokemons=[]):
+        if not pokemons:
+            for i in range(random.randint(1, 6)):
+                pokemons.append(random.choices(POKEMONS))
 
-eu = Player()
-print(eu)
+        super().__init__(nome=nome, pokemons=pokemons)
+
+meu_inimigo = Inimigo()
+print(meu_inimigo)
+meu_inimigo.mostrar_pokemons()
