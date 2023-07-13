@@ -111,6 +111,24 @@ class Player(Pessoa):
         else:
             print("ERRO: Esse jogador não possui nenhum pokemon para ser escolhido")
 
+    def explorar(self):
+        if random.random() <= 0.3:
+            pokemon = random.choice(POKEMONS)
+            print("Um pokemon selvagem apareceu: {}".format(pokemon))
+            
+            escolha = input("Deseja capturar pokemon? (s/n): ")
+            if escolha == "s":
+                if random.random() >= 0.5:
+                    self.capturar(pokemon)
+                else:
+                    print("{} fugiu...".format(pokemon))
+            else:
+                print("Ok, boa viagem...")
+        else:
+            print("Essa exploração não deu em nada...")    
+            return None
+        
+
 class Inimigo(Pessoa):
     tipo = "inimigo"
 
