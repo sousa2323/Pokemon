@@ -8,11 +8,11 @@ class Pokemon:
         if level: 
             self.level = level
         else:
-            self.level = random.randint(1, 100)          
+            self.level = random.randint(1, 100)   
         if nome:
             self.nome = nome
         else:
-            self.nome = especie 
+            self.nome = especie
 
         self.ataque = self.level * 5
         self.vida = self.level * 10
