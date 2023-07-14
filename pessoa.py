@@ -47,7 +47,7 @@ class Pessoa:
                 print("{} - {}".format(index, pokemon))
         else:
             print("{} não tem nenhum pokemon".format(self))
-    
+
     def escolher_pokemon(self):
         if self.pokemons:
             pokemon_escolhido = random.choice(self.pokemons)
@@ -67,7 +67,7 @@ class Pessoa:
 
     def batalhar(self, pessoa):
         print("{} iniciou uma batalha com {}".format(self, pessoa))
-        
+
         pessoa.mostrar_pokemons()
         pokemon_inimigo = pessoa.escolher_pokemon()
 
@@ -85,7 +85,7 @@ class Pessoa:
                 if vitoria_inimiga:
                     print("{} ganhou a batalha".format(pessoa))
                     break
-    
+
         else:
             print("essa batalha não pode ocorrer")  
 
@@ -115,7 +115,7 @@ class Player(Pessoa):
         if random.random() <= 0.3:
             pokemon = random.choice(POKEMONS)
             print("Um pokemon selvagem apareceu: {}".format(pokemon))
-            
+
             escolha = input("Deseja capturar pokemon? (s/n): ")
             if escolha == "s":
                 if random.random() >= 0.5:
@@ -127,7 +127,7 @@ class Player(Pessoa):
         else:
             print("Essa exploração não deu em nada...")    
             return None
-        
+
 
 class Inimigo(Pessoa):
     tipo = "inimigo"
