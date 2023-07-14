@@ -87,7 +87,7 @@ class Pessoa:
                     break
     
         else:
-            print("essa batalha não pode ocorrer")    
+            print("essa batalha não pode ocorrer")  
 
 class Player(Pessoa):
     tipo = "player"
@@ -134,7 +134,10 @@ class Inimigo(Pessoa):
 
     def __init__(self, nome=None, pokemons=[]):
         if not pokemons:
+            pokemons_aleatorios = []
             for i in range(random.randint(1, 6)):
-                pokemons.append(random.choices(POKEMONS))
+                pokemons_aleatorios.append(random.choice(POKEMONS))
 
-        super().__init__(nome=nome, pokemons=pokemons)
+            super().__init__(nome=nome, pokemons=pokemons_aleatorios)
+        else:
+            super().__init__(nome=nome, pokemons=pokemons)
