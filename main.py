@@ -71,5 +71,4 @@ if __name__ == "__main__":
             inimigo_aleatorio = Inimigo()
             player.batalhar(inimigo_aleatorio)
         else:
-            print("Escolha inválida :(")  
-
+            print("Escolha inválida :(")

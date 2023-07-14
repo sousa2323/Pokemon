@@ -132,7 +132,7 @@ class Player(Pessoa):
 class Inimigo(Pessoa):
     tipo = "inimigo"
 
-    def __init__(self, nome=None, pokemons=[]):
+    def __init__(self, nome=None, pokemons=None):
         if not pokemons:
             pokemons_aleatorios = []
             for i in range(random.randint(1, 6)):
